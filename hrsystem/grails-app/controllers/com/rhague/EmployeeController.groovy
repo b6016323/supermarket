@@ -2,5 +2,5 @@ package com.rhague
 
 class EmployeeController {
 
-    def index() { }
+    def scaffold = Employee
 }

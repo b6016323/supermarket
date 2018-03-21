@@ -2,5 +2,5 @@ package com.rhague
 
 class TeamLeaderController {
 
-    def index() { }
+    def scaffold = TeamLeader
 }
