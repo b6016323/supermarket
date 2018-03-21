@@ -8,6 +8,9 @@ class TeamLeader {
     long officePhone
     String leaderEmail
     String password
+    Manager manager
+    static hasMany = [employee:Employee]
+    Team team
     static constraints = {
         fullName nullable:false, blank:false
         department nullable:false, blank:false

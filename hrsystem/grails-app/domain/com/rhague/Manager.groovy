@@ -5,8 +5,9 @@ class Manager {
     String userName
     String password
     String managerEmail
-    string office
+    String office
     String department
+    static hasMany = [teamleader:TeamLeader,employee:Employee]
     static constraints = {
         fullName nullable:false, blank:false
         userName nullable:false, blank:false, unique:true

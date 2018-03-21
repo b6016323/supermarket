@@ -1,11 +1,13 @@
 package com.rhague
 
 class Team {
-    ID teamID
+    int teamID
     String teamName
     int numberOfEmployees
-    Section sectionName
-    Section description
+    String sectionName
+    String description
+    static hasMany = [shift:Shift,task:Task,employee:Employee]
+    TeamLeader teamleader
     static constraints = {
         teamID nullable:false, blank:false, unique:true
         teamName nullable:false, blank:false
