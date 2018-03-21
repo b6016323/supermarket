@@ -6,9 +6,9 @@ class Shift {
     int numberOfHours
     double startingTime
     static constraints = {
-        timeOfDay nullable:flase, blank:false
-        dayOfWeek nullable:flase, blank:false, inList:["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
-        numberOfHours nullable:flase, blank:false, max:24
-        startingTime nullable:flase, blank:false, range:0..24
+        timeOfDay nullable:false, blank:false
+        dayOfWeek nullable:false, blank:false, inList:["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
+        numberOfHours nullable:false, blank:false, max:24
+        startingTime nullable:false, blank:false, range:0..24
     }
 }
