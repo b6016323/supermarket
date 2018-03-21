@@ -7,7 +7,7 @@ class Manager {
     String managerEmail
     String office
     String department
-    static hasMany = [teamleader:TeamLeader,employee:Employee]
+    //static hasMany = [teamleader:TeamLeader,employee:Employee]
     static constraints = {
         fullName nullable:false, blank:false
         userName nullable:false, blank:false, unique:true
