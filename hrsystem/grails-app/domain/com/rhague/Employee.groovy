@@ -10,13 +10,13 @@ class Employee {
     String taxCode
     String contract
     static constraints = {
-        fullName nullable:flase, blank:false
-        dateOfBirth nullable:flase, blank:false
-        residence nullable:flase, blank:false
-        hourlyRate nullable:flase, blank:false, min:0.00
-        employeeID nullable:flase, blank:false, unique:true
-        dateEmployed nullable:flase, blank:false
-        taxCode fullName nullable:flase, blank:false
-        contract fullName nullable:flase, blank:false
+        fullName nullable:false, blank:false
+        dateOfBirth nullable:false, blank:false
+        residence nullable:false, blank:false
+        hourlyRate nullable:false, blank:false, min:0.00
+        employeeID nullable:false, blank:false, unique:true
+        dateEmployed nullable:false, blank:false
+        taxCode fullName nullable:false, blank:false
+        contract fullName nullable:false, blank:false
     }
 }
