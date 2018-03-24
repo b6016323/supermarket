@@ -9,11 +9,11 @@ class Employee {
     Date dateEmployed
     String taxCode
     String contract
-    //Manager manager
-    //TeamLeader teamleader
-    //static belongsTo = [Team,Task]
-    //Shift shift
-    //static hasMany=[task:Task]
+    Manager manager
+    TeamLeader teamleader
+    static belongsTo = [Team,Task]
+    Shift shift
+    static hasMany=[task:Task]
 
     static constraints = {
         fullName nullable:false, blank:false
