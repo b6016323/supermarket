@@ -9,15 +9,15 @@ class TeamLeader {
     String leaderEmail
     String password
     Manager manager
-    static hasMany = [employee:Employee]
     Team team
+    static hasMany = [employee:Employee]
     static constraints = {
         fullName nullable:false, blank:false
         department nullable:false, blank:false
-        employeedID nullable:false, blank:false,unique:true
+        employeeID nullable:false, blank:false, unique:true
         sectionName nullable:false, blank:false
         officePhone nullable:false, blank:false
-        leaderEmail nullable:false, blank:false,email:true
+        leaderEmail nullable:false, blank:false, email:true
         password nullable:false, blank:false
     }
 }

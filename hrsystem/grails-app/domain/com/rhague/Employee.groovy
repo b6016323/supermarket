@@ -11,15 +11,15 @@ class Employee {
     String contract
     Manager manager
     TeamLeader teamleader
-    static belongsTo = [Team,Task]
     Shift shift
+    static belongsTo = [Team,Task]
     static hasMany=[task:Task]
 
     static constraints = {
         fullName nullable:false, blank:false
         dateOfBirth nullable:false, blank:false
         residence nullable:false, blank:false
-        hourlyRate nullable:false, blank:false, min:0.00
+        hourlyRate nullable:false, blank:false, min:0d, scale:2
         employeeID nullable:false, blank:false, unique:true
         dateEmployed nullable:false, blank:false
         taxCode nullable:false, blank:false
