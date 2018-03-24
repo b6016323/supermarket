@@ -6,8 +6,8 @@ class Team {
     int numberOfEmployees
     String sectionName
     String description
-    //static hasMany = [shift:Shift,task:Task,employee:Employee]
-    //TeamLeader teamleader
+    static hasMany = [shift:Shift,task:Task,employee:Employee]
+    TeamLeader teamleader
     static constraints = {
         teamID nullable:false, blank:false, unique:true
         teamName nullable:false, blank:false
