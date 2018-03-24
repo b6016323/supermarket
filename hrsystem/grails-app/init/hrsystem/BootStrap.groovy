@@ -60,7 +60,7 @@ class BootStrap {
 	employeeID:'Fro65',
 	sectionName:'Stock Management',
 	officePhone:01142442445,
-	leadeEmail:'ffrounar@supermarket.com',
+	leaderEmail:'ffrounar@supermarket.com',
 	password:'frounar',
 	manager:mgrHargis,
 	team:tmGTStock
@@ -80,7 +80,30 @@ class BootStrap {
 	numberOfHours:4,
 	startingTime:07.00
 	).save(failOnError:true)
-	
+
+	//Create 2 Tasks
+	def tsRestock = new Task(
+	taskID:18,
+	taskName:'Restock',
+	numberOfPeople:5,
+	sectionName:'All Sections',
+	department:'All Departments',
+	timeRequired:'1 Hour',
+	description:'Restock empty spaces, this task is store wide, employees to restock their own section.',
+	taskCompleted:false	
+	).save(failOnError:true)
+
+	def tsWater = new Task(
+	taskID:193,
+	taskName:'Water Flora',
+	numberOfPeople:1,
+	sectionName:'Flora',
+	department:'Gardening',
+	timeRequired:'30 Minutes',
+	description:'Ensure all flora are properly watered, watering directions in flora manual',
+	taskCompleted:false
+	).save(failOnError:true)
+
 	//Create 2 Employees
 	def emNagel = new Employee(
 	fullName:'Erik Nagel',
@@ -92,8 +115,9 @@ class BootStrap {
 	taxCode:'e72',
 	contract:'Part-time',
 	manager:mgrHargis,
-	teamLeader:tlFrounar,
-	shift:[shMMorning,shTMorning]
+	teamleader:tlFrounar,
+	shift:[shMMorning,shTMorning],
+	task:tsRestock
 	).save(failOnError:true)
 
 	def emHillier = new Employee(
@@ -101,37 +125,17 @@ class BootStrap {
 	dateOfBirth:new Date('06/02/1951'),
 	residence:'Rotherham',
 	hourlyRate:12.00,
-	enmployeeID:'Fez01',
+	employeeID:'Fez01',
 	dateEmployed:new Date('06/02/1971'),
 	taxCode:'h8',
 	contract:'Full-time',
 	manager:mgrPeter,
-	teamLeader:tlGarmo,
-	shift:[shMMorning,shTMorning]
+	teamleader:tlGarmo,
+	shift:[shMMorning,shTMorning],
+	task:tsWater
 	).save(failOnError:true)
 
-	//Create 2 Tasks
-	def tsRestock = new Task(
-	taskID:18,
-	taskName:'Restock',
-	numberOfPeople:5,
-	sectionName:'All Sections',
-	departmentName:'All Departments',
-	timeRequired:'1 Hour',
-	description:'Restock empty spaces, this task is store wide, employees to restock their own section.',
-	taskCompleted:false	
-	).save(failOnError:true)
-
-	def tsWater = new Task(
-	taskID:193,
-	taskName:'Water Flora',
-	numberOfPeople:1,
-	sectionName:'Flora',
-	departmentName:'Gardening',
-	timeRequired:'30 Minutes',
-	description:'Ensure all flora are properly watered, watering directions in flora manual',
-	taskCompleted:false
-	).save(failOnError:true)
+	
     }
     def destroy = {
     }
