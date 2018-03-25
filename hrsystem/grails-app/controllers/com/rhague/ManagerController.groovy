@@ -38,7 +38,7 @@ class ManagerController {
 	def frontLoggedIn()
 	{
 		def currUser = session.user
-		if(session.user.getClass() == Manager)
+		if(session.user.getClass() == Manager || session.user.getClass() == TeamLeader)
 		{
 			render view:'fPage.gsp'
 		}
@@ -46,5 +46,13 @@ class ManagerController {
 		{
 			render view:'login'
 		}
+	}
+	def assignToTeam()
+	{
+		def empToAssign = Employee.findByEmployeeID(params.Employee)
+		def teamToAssign = Team.findByTeamID(params.Team.toInteger())
+		teamToAssign.addToEmployee(empToAssign).save(flush:true)
+		empToAssign.addToTeam(teamToAssign).save(flush:true)
+		render view:'teamassignment'
 	}
 }
