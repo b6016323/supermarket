@@ -30,7 +30,7 @@ class BootStrap {
 	numberOfEmployees: 4,
 	sectionName:'Flora',
 	description:'Care and maintenance team for flora in store'
-	).save(failOnError:true)
+	).save()
 
 	def tmGTStock = new Team(
 	teamID:6,
@@ -38,7 +38,7 @@ class BootStrap {
 	numberOfEmployees:2,
 	sectionName:'Stock Management',
 	description:'Stock management team for all games and toys'
-	).save(failOnError:true)
+	).save()
 
 	//Create 2 Team Leaders
 	def tlGarmo = new TeamLeader(
@@ -51,7 +51,7 @@ class BootStrap {
     	password:'garmo',
     	manager:mgrPeter,
 	team:tmGardeners
-	).save(failOnError:true)
+	).save()
 
 
 	def tlFrounar = new TeamLeader(
@@ -64,7 +64,7 @@ class BootStrap {
 	password:'frounar',
 	manager:mgrHargis,
 	team:tmGTStock
-	).save(failOnError:true)
+	).save()
 
 	//Create 2 Shifts
 	def shMMorning = new Shift(
@@ -72,14 +72,14 @@ class BootStrap {
 	dayOfWeek:'Monday',
 	numberOfHours:4,
 	startingTime:07.00
-	).save(failOnError:true)
+	).save()
 
 	def shTMorning = new Shift(
 	timeOfDay:'Morning',
 	dayOfWeek:'Tuesday',
 	numberOfHours:4,
 	startingTime:07.00
-	).save(failOnError:true)
+	).save()
 
 	//Create 2 Tasks
 	def tsRestock = new Task(
@@ -91,7 +91,7 @@ class BootStrap {
 	timeRequired:'1 Hour',
 	description:'Restock empty spaces, this task is store wide, employees to restock their own section.',
 	taskCompleted:false	
-	).save(failOnError:true)
+	).save()
 
 	def tsWater = new Task(
 	taskID:193,
@@ -102,7 +102,7 @@ class BootStrap {
 	timeRequired:'30 Minutes',
 	description:'Ensure all flora are properly watered, watering directions in flora manual',
 	taskCompleted:false
-	).save(failOnError:true)
+	).save()
 
 	//Create 2 Employees
 	def emNagel = new Employee(
@@ -118,7 +118,7 @@ class BootStrap {
 	teamleader:tlFrounar,
 	shift:[shMMorning,shTMorning],
 	task:tsRestock
-	).save(failOnError:true)
+	).save()
 
 	def emHillier = new Employee(
 	fullName:'Todd Hillier',
@@ -133,7 +133,7 @@ class BootStrap {
 	teamleader:tlGarmo,
 	shift:[shMMorning,shTMorning],
 	task:tsWater
-	).save(failOnError:true)
+	).save()
 
 	
     }
