@@ -11,6 +11,12 @@ class Task {
     boolean taskCompleted
     static hasMany = [employee:Employee,shift:Shift,team:Team]
     static belongsTo = [Employee, Team, Shift]
+
+    String toString()
+    {
+	return "$taskID - $department - $taskName"
+    }
+
     static constraints = {
         taskID nullable:false, blank:false, unique:true
         taskName nullable:false, blank:false

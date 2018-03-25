@@ -14,6 +14,11 @@ class Employee {
     Shift shift
     static belongsTo = [Team,Task]
     static hasMany=[task:Task]
+    
+    String toString()
+    {
+	return "$employeeID - $fullName"
+    }
 
     static constraints = {
         fullName nullable:false, blank:false

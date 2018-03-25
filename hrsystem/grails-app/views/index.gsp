@@ -14,6 +14,7 @@
     <div id="content" role="main">
         <section class="row colset-2-its">
             <h1>Supermarket hrsystem</h1>
+<!--remove this section when advanced is done-->
             <div id="controllers" role="navigation">
                 <ul>
                     <g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
@@ -23,6 +24,7 @@
                     </g:each>
                 </ul>
             </div>
+<!--end of removed section-->
         </section>
     </div>
 
