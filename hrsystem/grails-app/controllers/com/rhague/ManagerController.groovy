@@ -21,4 +21,18 @@ class ManagerController {
 		session.user = null
 		redirect(uri:'/')
 	}
+	def navMenu(){
+		render view:'nav'
+	}
+	def additionalNavItems(){
+		render "<li><a href='${createLink(action:'registration',controller:'Manager')}'>Registration</a></li><li><a href='${createLink(action:'assignments',controller:'Manager')}'>Assignments</a></li>"
+	}
+	def registration()
+	{
+		render view:'registration'
+	}
+	def assignments()
+	{
+		render view:'teamassignment'
+	}
 }

@@ -27,7 +27,6 @@
                 <a class="navbar-brand" href="/#">
 		    <asset:image src="grails.svg" alt="Grails Logo"/>
                 </a>
-		<g:loginToggle/>
             </div>
             <div class="navbar-collapse collapse" aria-expanded="false" style="height: 0.8px;">
                 <ul class="nav navbar-nav navbar-right">
@@ -36,7 +35,6 @@
             </div>
         </div>
     </div>
-	<g:loginToggle/>
     <g:layoutBody/>
 
     <div class="footer" role="contentinfo"></div>

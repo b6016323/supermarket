@@ -9,8 +9,7 @@
 <div class="nav" role="navigation">
             <ul>
                 <li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-                <li><a class="registration" href="${createLink(uri:'registration')}">Registration</a></li>
-<li><a class="registration" href="${createLink(uri:'teamassignment')}">Team Assignments</a></li>
+<li><g:loginToggle/></li>
             </ul>
         </div>
 	Manage Home
