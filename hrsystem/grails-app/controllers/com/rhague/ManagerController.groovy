@@ -9,7 +9,7 @@ class ManagerController {
 		if(user && user.password == params.password)
 		{
 			session.user = user
-			render view:'home'
+			render view:'index'
 		}
 		else
 		{
@@ -34,5 +34,17 @@ class ManagerController {
 	def assignments()
 	{
 		render view:'teamassignment'
+	}
+	def frontLoggedIn()
+	{
+		def currUser = session.user
+		if(session.user.getClass() == Manager)
+		{
+			render view:'fPage.gsp'
+		}
+		else
+		{
+			render view:'login'
+		}
 	}
 }

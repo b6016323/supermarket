@@ -13,7 +13,7 @@ class Employee {
     TeamLeader teamleader
     Shift shift
     static belongsTo = [Team,Task]
-    static hasMany=[task:Task]
+    static hasMany=[task:Task,team:Team]
     
     String toString()
     {

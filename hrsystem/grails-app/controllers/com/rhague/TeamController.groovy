@@ -2,5 +2,9 @@ package com.rhague
 
 class TeamController {
 
-    def scaffold = Shift
+    def scaffold = Team
+	def teamCheck()
+	{
+		render "Triggered"
+	}
 }

@@ -3,7 +3,7 @@ package com.rhague
 class BootStrap {
 
     def init = { servletContext ->
-
+/*
 	//Create 2 managers
 	def mgrPeter = new Manager(
 	fullName:'Peter Beardsley',
@@ -30,7 +30,7 @@ class BootStrap {
 	numberOfEmployees: 4,
 	sectionName:'Flora',
 	description:'Care and maintenance team for flora in store'
-	).save()
+	).save(failOnError:true)
 
 	def tmGTStock = new Team(
 	teamID:6,
@@ -118,7 +118,7 @@ class BootStrap {
 	teamleader:tlFrounar,
 	shift:[shMMorning,shTMorning],
 	task:tsRestock
-	).save()
+	).save(failOnError:true)
 
 	def emHillier = new Employee(
 	fullName:'Todd Hillier',
@@ -133,9 +133,22 @@ class BootStrap {
 	teamleader:tlGarmo,
 	shift:[shMMorning,shTMorning],
 	task:tsWater
-	).save()
+	).save(failOnError:true)
 
-	
+	emNagel.addToTeam(tmGTStock)
+	emHillier.addToTeam(tmGardeners)
+	tsWater.addToTeam(tmGardeners)
+	tsRestock.addToTeam(tmGTStock)
+	tsWater.addToShift(shMMorning)
+	tsWater.addToShift(shTMorning)
+	tsRestock.addToShift(shMMorning)
+	tsRestock.addToShift(shTMorning)
+	tmGTStock.addToShift(shMMorning)
+	tmGardeners.addToShift(shMMorning)
+	tmGTStock.addToShift(shTMorning)
+	tmGardeners.addToShift(shTMorning)
+	tsWater.addToEmployee(emHillier)
+	tsRestock.addToEmployee(emNagel)*/
     }
     def destroy = {
     }
