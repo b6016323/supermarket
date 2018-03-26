@@ -4,21 +4,22 @@ class TLLoginTagLib {
     //static defaultEncodeAs = [taglib:'html']
     static encodeAsForTags = [tagName: [taglib:'html'], otherTagName: [taglib:'none']]
 	def TLloginToggle = {
-		out << "<div style='margin:10px 0 30px;' class='printed'>"
-		if(request.getSession(false) && session.user)
+		if(request.getSession(false) && session.user && session.user.getClass() == TeamLeader)
 		{
-			out <<"<span>"
-			out <<"Signed in: ${session.user}"
-			out <<"</span><span>"
-			out <<"<a href='${createLink(controller:'TeamLeader',action:'logout')}'>"
-			out <<"Logout</a></span>"
+			out <<g.include(action:'additionalNavItems',controller:'TeamLeader')
+			out <<"<li><span class='signedInNotification'>Signed in: ${session.user}"
+			out <<"<a href='${createLink(controller:'TeamLeader',action:'logout')}'>Logout</a></span></li>"
 		}
 		else
 		{
-			out <<"<span>"
-			out <<"<a href='${createLink(controller:'TeamLeader',action:'login')}'>"
-			out <<"Login</a></span>"
+			if(request.getSession(false) && session.user && session.user.getClass() == Manager)
+			{
+				out <<""
+			}
+			else
+			{
+				out <<"<a href='${createLink(controller:'TeamLeader',action:'login')}'>Login</a>"
+			}
 		}
-		out <<	 "</div></br>"
 	}
 }

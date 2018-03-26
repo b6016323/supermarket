@@ -12,7 +12,7 @@
 <li><g:loginToggle/></li>
             </ul>
         </div>
-	<g:if test="$session.user,getClass() == 'Manager'">
+	<g:if test="$session.user.getClass() == 'Manager'">
 		<div class="mainOption"><g:link controller="TeamLeader" class="create" action="create">Create Team Leader</g:link></div>
 	</g:if>
 </body>

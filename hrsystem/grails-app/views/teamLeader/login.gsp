@@ -14,19 +14,11 @@
 	<input type="hidden" name="aName" value="${aName}">-->
 	<table>
 	<tr class="prop">
-		<td class="userName">
-			<label for="userName">Username:</label>
+		<td class="email">
+			<label for="email">Email:</label>
 		</td>
 		<td class="forminput">
-			<input type="text" id="userName" name="userName" value="">
-		</td>
-	</tr>
-	<tr class="prop">
-		<td class="password">
-			<label for="password">Password:</label>
-		</td>
-		<td class="forminput">
-			<input type="password" id="password" name="password" value="">
+			<input type="text" id="email" name="email" value="">
 		</td>
 	</tr>
 	<tr class="prop">

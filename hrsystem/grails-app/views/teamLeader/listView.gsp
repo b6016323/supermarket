@@ -8,6 +8,7 @@
     <body>
         <a href="#list-teamLeader" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
         <g:include controller="TeamLeader" action="navMenu"/>
-	<g:include controller="TeamLeader" action="frontLoggedIn"/>
+<f:table collection="${itemsToShow}" />
+</table>
     </body>
 </html>

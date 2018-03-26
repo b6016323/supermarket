@@ -38,13 +38,20 @@ class ManagerController {
 	def frontLoggedIn()
 	{
 		def currUser = session.user
-		if(session.user.getClass() == Manager || session.user.getClass() == TeamLeader)
+		if(session.user.getClass() == Manager)
 		{
-			render view:'fPage.gsp'
+			render view:'fPage'
 		}
 		else
 		{
+			if(currUser.getClass() == TeamLeader)
+			{
+			render "You must be a Manager to access this area"
+			}
+			else
+			{
 			render view:'login'
+			}
 		}
 	}
 	def assignToTeam()

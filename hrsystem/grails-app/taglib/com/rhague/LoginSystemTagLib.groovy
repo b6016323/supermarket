@@ -4,8 +4,7 @@ class LoginSystemTagLib {
     //static defaultEncodeAs = [taglib:'html']
     static encodeAsForTags = [tagName: [taglib:'html'], otherTagName: [taglib:'none']]
 	def loginToggle = {
-		out << ""
-		if(request.getSession(false) && session.user)
+		if(request.getSession(false) && session.user && session.user.getClass() == Manager)
 		{
 			out <<g.include(action:'additionalNavItems',controller:'Manager')
 			out <<"<li><span class='signedInNotification'>Signed in: ${session.user}"
@@ -13,8 +12,14 @@ class LoginSystemTagLib {
 		}
 		else
 		{
-			out <<"<a href='${createLink(controller:'Manager',action:'login')}'>Login</a>"
+			if(request.getSession(false) && session.user && session.user.getClass() == TeamLeader)
+			{
+				out <<""
+			}
+			else
+			{
+				out <<"<a href='${createLink(controller:'Manager',action:'login')}'>Login</a>"
+			}
 		}
-		out <<	 ""
 	}
 }
