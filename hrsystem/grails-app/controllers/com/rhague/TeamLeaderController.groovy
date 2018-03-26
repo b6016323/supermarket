@@ -25,7 +25,7 @@ class TeamLeaderController {
 		render view:'nav'
 	}
 	def additionalNavItems(){
-		render ""
+		render "<li><a href='${createLink(action:'taskSearch',controller:'Team Leader')}'>Task Search</a></li>"
 	}
 	def frontLoggedIn()
 	{
@@ -57,4 +57,18 @@ class TeamLeaderController {
 		
 		render(view:'listView',model:[itemsToShow:itemsInClass])
 	}
+	def taskSearch(){
+	
+		}
+		def searchResults(){
+			def taskProps = Task.metaClass.properties*.name
+			def tasks = Task.withCriteria{
+				params.each{field,value->
+						if(taskProps.grep(field)&&value){
+							ilike(field,value)
+						}
+				}
+			}
+			return [tasks:tasks]
+		}
 }

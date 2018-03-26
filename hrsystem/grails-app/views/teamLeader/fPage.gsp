@@ -10,5 +10,6 @@
 	<div class="mainOption"><g:link controller="TeamLeader" action="showItems" id="Task">Show Tasks</g:link></div>
 	<div class="mainOption"><g:link controller="TeamLeader" action="showItems" id="Employee">Show Employees</g:link></div>
 	<div class="mainOption"><g:link controller="TeamLeader" action="showItems" id="Team">Show Teams</g:link></div>
+	<div class="mainOption"><g:link controller="TeamLeader" action="taskSearch" id="Team">Search Tasks</g:link></div>
 </body>
 </html>

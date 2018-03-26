@@ -25,7 +25,7 @@ class ManagerController {
 		render view:'nav'
 	}
 	def additionalNavItems(){
-		render "<li><a href='${createLink(action:'registration',controller:'Manager')}'>Registration</a></li><li><a href='${createLink(action:'assignments',controller:'Manager')}'>Assignments</a></li>"
+		render "<li><a href='${createLink(action:'registration',controller:'Manager')}'>Registration</a></li><li><a href='${createLink(action:'assignments',controller:'Manager')}'>Assignments</a></li><li><a href='${createLink(action:'managersearch',controller:'Manager')}'>Employee Search</a></li>"
 	}
 	def registration()
 	{
@@ -62,4 +62,22 @@ class ManagerController {
 		empToAssign.addToTeam(teamToAssign).save(flush:true)
 		render view:'teamassignment'
 	}
+
+	def managersearch(){
+	
+	}
+	def searchResults(){
+		def employeeProps = Employee.metaClass.properties*.name
+		def employees = Employee.withCriteria{
+			"${params.qType}"{
+				params.each{field,value->
+					if(employeeProps.grep(field)&&value){
+						ilike(field,value)
+					}
+				}
+			}
+		}
+		return [employees:employees]
+	}
+
 }
